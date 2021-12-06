@@ -20,18 +20,6 @@ public class FrontOfStageTicket extends Ticket {
         return super.entryTime().minusHours(1);
     }
 
-    public String getNameOfBand() {
-        return nameOfBand;
-    }
-
-    public LocalDateTime getStartTime() {
-        return startTime;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
     public String getExtraCode() {
         return extraCode;
     }
