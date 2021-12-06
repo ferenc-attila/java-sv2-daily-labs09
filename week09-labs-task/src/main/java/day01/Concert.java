@@ -8,8 +8,8 @@ public class Concert {
 
     private List<Person> persons = new ArrayList<>();
 
-    public void addPerson(Person person, LocalTime time) {
-        if (person.getTicket().entryTime().isAfter(time)) {
+    public void addPerson(Person person, LocalTime actualTime) {
+        if (actualTime.isBefore(person.getTicket().entryTime())) {
             throw new IllegalArgumentException("Invalid entry time!");
         } else {
             persons.add(person);

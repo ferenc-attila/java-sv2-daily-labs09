@@ -1,12 +1,12 @@
 package day01;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ConcertTest {
 
@@ -23,7 +23,8 @@ class ConcertTest {
 
     @Test
     void addPersonInvalidTimeTest() {
-        IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> concert.addPerson(personOne, LocalTime.parse("19:59")));
+        LocalTime actualTime = LocalTime.of(19, 59);
+        IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> concert.addPerson(personOne, actualTime));
         assertEquals("Invalid entry time!", iae.getMessage());
     }
 }

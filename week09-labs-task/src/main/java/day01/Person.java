@@ -9,6 +9,6 @@ public class Person {
     }
 
     public Ticket getTicket() {
-        return ticket;
+        return this.ticket;
     }
 }
