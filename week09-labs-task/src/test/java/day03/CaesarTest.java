@@ -10,7 +10,6 @@ class CaesarTest {
 
     @Test
     void encryptsTest() {
-
         String s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         assertEquals(s, caesar.encrypts(caesar.encrypts(s)));
     }
